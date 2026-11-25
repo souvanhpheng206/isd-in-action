@@ -62,4 +62,11 @@ public class TacoOrder implements Serializable {
   public void addTaco(Taco taco) {
     this.tacos.add(taco);
   }
+  public BigDecimal getTotalPrice() {
+      BigDecimal totalPrice = BigDecimal.ZERO;
+      for (Taco taco : tacos) {
+          totalPrice = totalPrice.add(taco.getPrice());
+      }
+      return totalPrice;
+  }
 }

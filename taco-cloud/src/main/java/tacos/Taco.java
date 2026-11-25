@@ -35,5 +35,12 @@ public class Taco {
   public void addIngredient(Ingredient ingredient) {
     this.ingredients.add(ingredient);
   }
-
+public BigDecimal getPrice() {
+    BigDecimal totalPrice = BigDecimal.ZERO;
+    for (Ingredient ingredient : ingredients) {
+        if (ingredient.getPrice() != null) {
+            totalPrice = totalPrice.add(ingredient.getPrice());
+        }
+    }
+    return totalPrice;
 }

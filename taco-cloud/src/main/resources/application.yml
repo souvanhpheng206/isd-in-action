@@ -1,4 +1,13 @@
+# SCRUM-2 H2 console configuration
+server:
+  port: 8090
 spring:
   datasource:
     generate-unique-name: false
     name: tacocloud
+    url: jdbc:h2:mem:tacocloud
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
